@@ -1,5 +1,6 @@
 package br.com.alura.screenmatch;
 
+import br.com.alura.screenmatch.model.EpisodeData;
 import br.com.alura.screenmatch.model.SeriesData;
 import br.com.alura.screenmatch.service.ConsumoApi;
 import br.com.alura.screenmatch.service.ConvertData;
@@ -22,5 +23,9 @@ public class ScreenmatchApplication implements CommandLineRunner {
         ConvertData convert = new ConvertData();
         SeriesData data = convert.getData(json, SeriesData.class);
         System.out.println(data);
+
+        json = consumoApi.getData("https://www.omdbapi.com/?t=peaky+blinders&season=5&episode=1&apikey=339000c9");
+        EpisodeData episode = convert.getData(json, EpisodeData.class);
+        System.out.println(episode);
     }
 }
