@@ -1,5 +1,6 @@
 package br.com.alura.screenmatch;
 
+import br.com.alura.screenmatch.service.ConsumoApi;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +14,8 @@ public class ScreenmatchApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Hello System");
+        var consumoApi = new ConsumoApi();
+        var json = consumoApi.getData("http://www.omdbapi.com/?t=peaky+blinders&Season=1&apikey=339000c9");
+        System.out.println(json);
     }
 }
