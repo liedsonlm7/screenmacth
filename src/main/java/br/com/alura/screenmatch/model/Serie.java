@@ -125,6 +125,6 @@ public class Serie {
                 "Sinopse: " + sinopse + '\n' +
                 "Poster: " + poster + '\n' +
                 "Atores: " + atores + '\n' +
-                "Episodios: " + episodios;
+                "Episodios: " + episodios + "\n";
     }
 }
