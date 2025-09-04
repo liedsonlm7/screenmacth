@@ -28,7 +28,7 @@ public class Serie {
     private String atores;
     private String sinopse;
 
-    @Transient
+    @OneToMany(mappedBy = "serie", cascade = CascadeType.ALL)
     private List<Episode> episodios = new ArrayList<>();
 
     public Serie() {}
