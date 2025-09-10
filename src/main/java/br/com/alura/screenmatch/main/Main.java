@@ -179,7 +179,7 @@ public class Main {
         sc.nextLine();
         System.out.println("Avaliações a partir de que valor? ");
         var avaliacao = sc.nextDouble();
-        List<Serie> filroSeries = repository.findByTotalTemporadasLessThanEqualAndAvaliacaoGreaterThanEqual(totalTemporadas, avaliacao);
+        List<Serie> filroSeries = repository.seriesPorTemporadaEAvaliacao(totalTemporadas, avaliacao);
         System.out.println("Séries filtradas: ");
         filroSeries.forEach(s -> System.out.println(s.getTitulo() + " - avaliação: " + s.getAvaliacao()));
     }
