@@ -10,17 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ScreenmatchApplication {
 
-    @Autowired
-    private SerieRepository repository;
-
 	public static void main(String[] args) {
-		SpringApplication.run(ScreenmatchApplication.class, args);
+        SpringApplication.run(ScreenmatchApplication.class, args);
 	}
 
-    @Override
-    public void run(String... args) throws Exception {
-        Main main = new Main(repository);
-        main.exibeMenu();
 
-    }
 }
