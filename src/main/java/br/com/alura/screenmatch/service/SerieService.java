@@ -15,10 +15,8 @@ public class SerieService {
     private SerieRepository repository;
 
     public List<SerieDTO> getAllSeries() {
-        return repository.findAll()
-                .stream()
-                .map(s -> new SerieDTO(s.getId(), s.getTitulo(), s.getTotalTemporadas(), s.getAvaliacao(), s.getGenero(), s.getAtores(), s.getPoster(), s.getSinopse()))
-                .collect(Collectors.toList());
+        return convertData(repository.findAll());
+
     }
 
     public List<SerieDTO> getTop5Series() {
@@ -30,5 +28,9 @@ public class SerieService {
         return series.stream()
                 .map(s -> new SerieDTO(s.getId(), s.getTitulo(), s.getTotalTemporadas(), s.getAvaliacao(), s.getGenero(), s.getAtores(), s.getPoster(), s.getSinopse()))
                 .collect(Collectors.toList());
+    }
+
+    public List<SerieDTO> getRelease() {
+        return convertData(repository.findTop5ByOrderByEpisodiosDataLancamentoDesc());
     }
 }

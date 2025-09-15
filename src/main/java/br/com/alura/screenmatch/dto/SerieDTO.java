@@ -7,7 +7,7 @@ public record SerieDTO(Long id,
                        Integer totalTemporadas,
                        double avaliacao,
                        Categoria genero,
-                       String poster,
                        String atores,
+                       String poster,
                        String sinopse) {
 }
