@@ -1,6 +1,7 @@
 ## Screenmatch
 Screenmatch é uma plataforma fictícia que permite ao usuário consultar informações sobre suas séries favoritas, como número de temporadas, melhores episódios, atores, etc.
 
+![Tela Inicial](docs/img/screenmatch-1.png)
 <br>
 
 ## 🚀 Tecnologias 
